@@ -54,7 +54,7 @@ export default function Navbar() {
             {navItem}
           </ul>
         </div>
-        <Link href="/" className="btn btn-ghost text-xl">Education Consultant</Link>
+        <Link href="/" className="btn btn-ghost text-xl">Stair Touch</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItem}</ul>

@@ -1,4 +1,7 @@
+import News from "@/components/pages/home/News";
+import OurServices from "@/components/pages/home/OurServices";
 import UniversitySlide from "@/components/pages/home/UniversitySlide";
+import UpcomingUniversityEvents from "@/components/pages/home/UpcomingUniversityEvents";
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF } from "react-icons/fa";
@@ -81,6 +84,25 @@ export default function Home() {
         <div className="container mx-auto flex px-5 my-5 md:flex-row flex-col items-center "></div>
       </section>
       <UniversitySlide />
+      <div className=" container mx-auto">
+        <div className=" flex flex-col gap-10 my-32">
+          <OurServices />
+        </div>
+      </div>
+      <div className=" bg-gray-50 dark:bg-transparent">
+        <div className="container mx-auto">
+          <div className=" flex flex-col gap-10 py-20 ">
+            <News />
+          </div>
+        </div>
+      </div>
+      <div className=" ">
+        <div className="container mx-auto">
+          <div className=" flex flex-col gap-10 py-20 ">
+            <UpcomingUniversityEvents />
+          </div>
+        </div>
+      </div>
     </>
   );
 }
