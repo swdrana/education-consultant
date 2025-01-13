@@ -11,15 +11,15 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className=" body-font relative">
-        <div className="container mx-auto flex px-5 my-5 md:flex-row flex-col items-center">
+      <section className=" relative overflow-hidden">
+        <div className="container mx-auto flex px-5  md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="sm:text-5xl text-4xl mb-10 font-bold">
+            <h1 className="sm:text-5xl text-4xl font-bold">
               We Help to <span className=" text-primary">Build </span>
               <br className="md:hidden lg:inline-block" />
               Your Dream
             </h1>
-            <p className="mb-10 leading-relaxed ">
+            <p className="my-5 md:my-10 leading-relaxed  ">
               We are always availed to consult on taking your higher education
               to the next level so you can stay competitive in the global world.
               We welcome the opportunity to work with you &ldquo;today&ldquo;
@@ -28,7 +28,7 @@ export default function Home() {
             <div className="flex justify-center">
               <Link
                 href={"/contact"}
-                className=" btn btn-primary  border-0 py-2 px-6 focus:outline-none  rounded text-lg items-center justify-center "
+                className=" btn btn-primary  border-0 px-6 focus:outline-none  rounded text-lg items-center justify-center "
               >
                 Apply Online &nbsp; <FaArrowRight />
               </Link>
@@ -59,6 +59,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
             <Image
               className="object-cover object-center rounded z-10"
@@ -79,6 +80,8 @@ export default function Home() {
           />
         </div>
       </section>
+
+
       {/* Top University Section */}
       <section className=" body-font relative">
         <div className="container mx-auto flex px-5 my-5 md:flex-row flex-col items-center "></div>

@@ -48,6 +48,30 @@ const config: Config = {
         },
       },
       "dark", // Default dark theme
+      // {
+      //   dark: {
+      //     primary: "#4300ff",
+      //     "primary-content": "#d0daff",
+      //     secondary: "#00ceff",
+      //     "secondary-content": "#000f16",
+      //     accent: "#67b400",
+      //     "accent-content": "#040c00",
+      //     neutral: "#0f0101",
+      //     "neutral-content": "#cac3c2",
+      //     "base-100": "#1b3331",
+      //     "base-200": "#162b29",
+      //     "base-300": "#112322",
+      //     "base-content": "#cdd2d2",
+      //     info: "#00b7ff",
+      //     "info-content": "#000c16",
+      //     success: "#7de400",
+      //     "success-content": "#051200",
+      //     warning: "#ffac49",
+      //     "warning-content": "#160b02",
+      //     error: "#ff6b7f",
+      //     "error-content": "#160406",
+      //   },
+      // },
       {
         mytheme: {
           // Your custom theme
