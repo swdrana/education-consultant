@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ThemeController from "../buttons/ThemeController";
 
 export default function Navbar() {
   const navItem = (
@@ -59,8 +60,9 @@ export default function Navbar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItem}</ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn btn-primary rounded-3xl dark:text-white">Free Consulting</a>
+      <div className="navbar-end gap-2">
+      <ThemeController/>
+        <a className="btn btn-primary btn-md rounded-3xl ">Free Consulting</a>
       </div>
     </div>
   );
