@@ -51,7 +51,7 @@ export default function OurServices() {
         },
     ]
   return (
-    <div>
+    <div className=" container mx-auto">
       <SectionTitle
         text="Our Services"
         desc="Executive Trade International is an University Application Centre, guiding Bangladeshi students to Australian, British, Canadian and Irish universities!"
@@ -62,10 +62,10 @@ export default function OurServices() {
         {/* Card */}
         {
             cardInfo.map(card=>{
-                return <div key={card._id} className={`border-2 hover:${card.borderColor} rounded-lg w-80 h-[350] p-4 overflow-hidden `}>
+                return <div key={card._id} className={`border-2 hover:${card.borderColor} rounded-lg w-[350px] h-[350px] p-4 overflow-hidden `}>
                     <Image src={cardImg1} alt="" width={50} height={50} className={`rounded-full ${card.bgColor} overflow-hidden h-20 w-20 object-cover`} />
                     <Link href='/'>
-                        <h2 className=" pt-5 pb-3 text-2xl font-semi-bold">Career Counselling</h2>
+                        <h2 className=" pt-5 pb-3 text-2xl font-bold">Career Counselling</h2>
                         <p className=" text-sm mb-5 text-justify font-light">Maiores voluptas laboriosam non dolorum perferendis fuga repellat aut. Blanditiis quos in minus. Voluptatum quia quia voluptas voluptatem vero ex possimus. Iure et consectetur dolorem dicta accusantium fugiat.</p>
                         <button className={`btn btn-sm hover:bg-transparent hover:text-black ${card.textColor} btn-outline border-0 text-start ps-1 ms`}>Learn More -&gt;</button>
                     </Link>
