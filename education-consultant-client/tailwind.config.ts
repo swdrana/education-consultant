@@ -49,7 +49,7 @@ const config: Config = {
         light: {
           primary: "#e70905", // Updated primary color (reddish-brown)
           "primary-content": "#ffffff", // White content for readability on primary color
-          secondary: "#5F9B41", // A complementary secondary color (Greenish)
+          secondary: "#FF6347", // A complementary secondary color (Greenish)
           "secondary-content": "#ffffff", // White content for readability
           accent: "#F4A300", // A warm accent color (Golden yellow)
           "accent-content": "#ffffff", // White content for accent color readability

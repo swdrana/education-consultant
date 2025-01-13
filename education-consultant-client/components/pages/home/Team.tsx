@@ -105,7 +105,7 @@ export default function Team() {
               <div className="card card-side bg-base-100 shadow-xl flex flex-col md:flex-row p-2 ">
                 <figure className="min-w-48  m-2 ">
                   <Image
-                    className={` object-fill rounded-2xl shadow-lg bg-orange-500 max-h-[350px] md:h-52 `}
+                    className={` object-cover rounded-2xl shadow-lg bg-orange-500 max-h-[350px] md:h-52 `}
                     src={member.photoUrl}
                     alt={member.name}
                     width={100}
@@ -166,9 +166,6 @@ export default function Team() {
             </div>
           );
         })}
-      </div>
-      <div className=" flex items-center justify-center pt-20 pb-8">
-        <button className={`btn btn-primary`}>Join Here</button>
       </div>
     </div>
   );

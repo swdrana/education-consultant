@@ -1,5 +1,7 @@
 import News from "@/components/pages/home/News";
 import OurServices from "@/components/pages/home/OurServices";
+import Review from "@/components/pages/home/Review";
+import Reviews from "@/components/pages/home/Reviews";
 import SocailLink from "@/components/pages/home/SocailLink";
 import Team from "@/components/pages/home/Team";
 import UniversitySlide from "@/components/pages/home/UniversitySlide";
@@ -83,6 +85,20 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className=" bg-base-200 dark:bg-transparent">
+        <div className="container mx-auto">
+          <div className="flex flex-col gap-10 py-20">
+            <Team />
+          </div>
+        </div>
+      </div>
+
+      {/* Reviews */}
+      <section className=" bg-base-200 bg-[url('/img/testimonial_bg.jpg')] bg-no-repeat bg-right-bottom dark:bg-transparent dark:bg-[url('/img/testimonial_bg.jpg')] ">
+        <div className="container mx-auto">
+          <Reviews />
+        </div>
+      </section>
       <div className=" bg-base-200 dark:bg-transparent">
         <div className="container mx-auto">
           <div className="flex flex-col gap-10 py-20">
