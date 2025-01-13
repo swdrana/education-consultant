@@ -1,6 +1,7 @@
 import News from "@/components/pages/home/News";
 import OurServices from "@/components/pages/home/OurServices";
 import SocailLink from "@/components/pages/home/SocailLink";
+import Team from "@/components/pages/home/Team";
 import UniversitySlide from "@/components/pages/home/UniversitySlide";
 import UpcomingUniversityEvents from "@/components/pages/home/UpcomingUniversityEvents";
 import Image from "next/image";
@@ -12,7 +13,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="">
-        <div className="container mx-auto flex px-5  md:flex-row flex-col items-center  relative overflow-hidden">
+        <div className="container mx-auto flex px-5  md:flex-row flex-col items-center  relative overflow-visible lg:overflow-hidden">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 className="sm:text-5xl text-4xl font-bold">
               We Help to <span className=" text-primary">Build </span>
@@ -79,6 +80,13 @@ export default function Home() {
         <div className="container mx-auto">
           <div className="flex flex-col gap-10 py-20">
             <UpcomingUniversityEvents />
+          </div>
+        </div>
+      </div>
+      <div className=" bg-base-200 dark:bg-transparent">
+        <div className="container mx-auto">
+          <div className="flex flex-col gap-10 py-20">
+            <Team />
           </div>
         </div>
       </div>

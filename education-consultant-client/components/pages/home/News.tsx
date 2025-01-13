@@ -26,8 +26,8 @@ export default function News() {
   return (
     <div>
       <SectionTitle
-        text="News"
-        desc="Sunt autem nusquam hoc epicurus in gravissimo bello animadversionis metu degendae praesidia firmissima. Torquatos nostros? quos tu paulo ante cum teneam sententiam, quid bonum esse vult."
+        text="Our Team"
+        desc="To maintain the reputation of a quality,high standard and reliable solution by establishing ourselves as one stop service Provider in the Career Industry."
       />
 
       {/* Card Section */}

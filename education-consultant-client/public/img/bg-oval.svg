@@ -2,8 +2,10 @@
 <svg width="1030px" height="581px" viewBox="0 0 1030 581" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <linearGradient x1="49.5676388%" y1="34.3205483%" x2="40.6303376%" y2="50.808721%" id="linearGradient-sv6c9cs31z-1">
-            <stop stop-color="#8471FF" offset="0%"></stop>
-            <stop stop-color="#717CFF" offset="100%"></stop>
+            <!-- <stop stop-color="#8471FF" offset="0%"></stop>
+            <stop stop-color="#717CFF" offset="100%"></stop> -->
+            <stop stop-color="#e70905" offset="0%"></stop>
+            <stop stop-color="#f42320" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.70249721">
