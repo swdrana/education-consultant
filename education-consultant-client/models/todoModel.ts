@@ -6,14 +6,15 @@ export interface ITodo {
   todoDeadline: Date; // Change to Date type
 }
 
-// Merging ITodo interface with mongoose's Document interface to create 
+// Merging ITodo interface with mongoose's Document interface to create
 // a new interface that represents a todo document in MongoDB
 export interface ITodoDocument extends ITodo, Document {
+  _id: mongoose.Types.ObjectId;
   createdAt: Date;
   updatedAt: Date;
 }
 
-// Defining a mongoose schema for the todo document, specifying the types 
+// Defining a mongoose schema for the todo document, specifying the types
 // and constraints
 const todoSchema = new mongoose.Schema<ITodoDocument>(
   {
