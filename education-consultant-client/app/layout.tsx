@@ -1,7 +1,9 @@
+import Navbar from "@/components/navbar/Navbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar/Navbar";
+import { connectToMongoDB } from "@/lib/db";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,12 +17,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  connectToMongoDB();
   return (
     <html lang="en">
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Your site description here" />
+        <meta property="og:title" content="Stairtouch Site Title" />
+        <meta property="og:description" content="Description for social sharing" />
+        <meta property="og:image" content="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-6/347152304_1534096320450371_7741133310102278855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=_HmkNAJedjsQ7kNvgFInx7C&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&_nc_gid=Ap9nM2-GaU85TqthQR6ugdc&oh=00_AYDs2PZ2lt7mZ1uaIv_TMIipL-icYFLFeftE1GkeNCi2TQ&oe=678BB653" />
+        <meta property="og:url" content="https://stairtouch.com/" />
+        <title>Your Site Title</title>
+      </Head>
       <body className={inter.className}>
-        <Navbar/>
+        <Navbar />
         {children}
-        </body>
+      </body>
     </html>
   );
 }

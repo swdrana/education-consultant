@@ -48,9 +48,9 @@ const config: Config = {
         // },
         light: {
           primary: "#e70905", // Updated primary color (reddish-brown)
-          "primary-content": "#ffffff", // White content for readability on primary color
-          secondary: "#FF6347", // A complementary secondary color (Greenish)
-          "secondary-content": "#ffffff", // White content for readability
+          "primary-content": "#ffedec", // White content for readability on primary color
+          secondary: "#72e705", // A complementary secondary color (Greenish)
+          "secondary-content": "#000000", // White content for readability
           accent: "#F4A300", // A warm accent color (Golden yellow)
           "accent-content": "#ffffff", // White content for accent color readability
           neutral: "#2D2D2D", // A darker neutral color for background and contrasts
@@ -61,12 +61,12 @@ const config: Config = {
           "base-content": "#2A2A2A", // Dark text color on base background
           info: "#2196F3", // Blue for info (standard blue)
           "info-content": "#ffffff", // White content for info
-          success: "#4CAF50", // Green for success
-          "success-content": "#ffffff", // White content for success
-          warning: "#FF9800", // Orange for warning
-          "warning-content": "#ffffff", // White content for warning
-          error: "#F44336", // Red for error (slightly darker red for distinction)
-          "error-content": "#ffffff", // White content for error
+          success: "#05e705", // Green for success
+          "success-content": "#000000", // White content for success
+          warning: "#e7e705", // Orange for warning
+          "warning-content": "#000000", // White content for warning
+          error: "#e70505", // Red for error (slightly darker red for distinction)
+          "error-content": "#ffecec", // White content for error
         },
         
       },
@@ -74,9 +74,9 @@ const config: Config = {
       {
         dark: {
           primary: "#e70905",
-          "primary-content": "#d0daff",
-          secondary: "#00ceff",
-          "secondary-content": "#000f16",
+          "primary-content": "#ffedec",
+          secondary: "#72e705",
+          "secondary-content": "#000000",
           accent: "#67b400",
           "accent-content": "#040c00",
           neutral: "#0f0101",
@@ -87,11 +87,11 @@ const config: Config = {
           "base-content": "#cdd2d2",
           info: "#00b7ff",
           "info-content": "#000c16",
-          success: "#7de400",
+          success: "#05e705",
           "success-content": "#051200",
-          warning: "#ffac49",
+          warning: "#e7e705",
           "warning-content": "#160b02",
-          error: "#ff6b7f",
+          error: "#e70505",
           "error-content": "#160406",
         },
       },
