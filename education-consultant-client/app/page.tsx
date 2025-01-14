@@ -102,13 +102,6 @@ export default function Home() {
           <Reviews />
         </div>
       </section>
-      <div className=" bg-base-200 dark:bg-transparent">
-        <div className="container mx-auto">
-          <div className="flex flex-col gap-10 py-20">
-            <Team />
-          </div>
-        </div>
-      </div>
       <div className="min-h-screen relative bg-slate-200">
       <div className="flex justify-around flex-col items-center h-1/2 ">
         <h1 className=" text-4xl font-bold mt-12 mb-12">Todos Page</h1>

@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { connectToMongoDB } from "@/lib/db";
 import Head from "next/head";
+import MainFooter from "@/components/footer/MainFooter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Navbar />
         {children}
       </body>
+      <MainFooter/>
     </html>
   );
 }
