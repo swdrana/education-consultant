@@ -2,7 +2,11 @@
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import img_0 from "@/public/img/feature/img_0.png";
+import img_2 from "@/public/img/feature/img_2.png";
+import img_3 from "@/public/img/feature/img_3.png";
+import img_6 from "@/public/img/feature/img_6.png";
+import img_7 from "@/public/img/feature/img_7.png";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,14 +19,11 @@ import Image from "next/image";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const imgList = [
-  "https://www.mobvista.com/_nuxt/img/img_0.72280da.png",
-  "https://www.mobvista.com/_nuxt/img/img_1.564625e.png",
-  "https://www.mobvista.com/_nuxt/img/img_2.adbefa5.png",
-  "https://www.mobvista.com/_nuxt/img/img_3.61766c0.png",
-  "https://www.mobvista.com/_nuxt/img/img_4.6402af9.png",
-  "https://www.mobvista.com/_nuxt/img/img_5.1dc57d9.png",
-  "https://www.mobvista.com/_nuxt/img/img_6.c564059.png",
-  "https://www.mobvista.com/_nuxt/img/img_7.2c55042.png",
+  img_0,
+  img_2,
+  img_3,
+  img_6,
+  img_7
 ];
 export default function UniversitySlide() {
   return (
@@ -42,8 +43,8 @@ export default function UniversitySlide() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        {imgList.map((img) => (
-          <SwiperSlide key={img} className="swiper-slide">
+        {imgList.map((img,i) => (
+          <SwiperSlide key={i} className="swiper-slide">
             <Image src={img} alt="" width={200} height={200} />
           </SwiperSlide>
         ))}

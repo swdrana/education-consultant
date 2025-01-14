@@ -7,7 +7,7 @@ import SocailLink from "@/components/pages/home/SocailLink";
 import Team from "@/components/pages/home/Team";
 import UniversitySlide from "@/components/pages/home/UniversitySlide";
 import UpcomingUniversityEvents from "@/components/pages/home/UpcomingUniversityEvents";
-import Todo from "@/components/pages/Todos";
+import Videos from "@/components/pages/home/Videos";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      
+
       <section className="">
         <div className="container mx-auto flex px-5  md:flex-row flex-col items-center  relative overflow-visible lg:overflow-hidden">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -102,15 +102,21 @@ export default function Home() {
           <Reviews />
         </div>
       </section>
+      {/* Videos */}
+      <section className=" bg-base-100 ">
+        <div className="container mx-auto">
+          <Videos />
+        </div>
+      </section>
       <div className="min-h-screen relative bg-slate-200">
-      <div className="flex justify-around flex-col items-center h-1/2 ">
-        <h1 className=" text-4xl font-bold mt-12 mb-12">Todos Page</h1>
-        <Forms/>
+        <div className="flex justify-around flex-col items-center h-1/2 ">
+          <h1 className=" text-4xl font-bold mt-12 mb-12">Todos Page</h1>
+          <Forms />
+        </div>
+        <div className="flex  flex-col items-center h-1/2 ">
+          <GetTodosUI />
+        </div>
       </div>
-      <div className="flex  flex-col items-center h-1/2 ">
-        <GetTodosUI/>
-      </div>
-    </div>
     </>
   );
 }
