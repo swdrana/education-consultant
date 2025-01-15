@@ -7,6 +7,9 @@ export default function Navbar() {
       <li>
         <Link href="/services">Our Services</Link>
       </li>
+      <li>
+        <Link href="/apply">Apply Now</Link>
+      </li>
       {/* <li>
         <details>
           <summary>Parent</summary>
@@ -29,7 +32,8 @@ export default function Navbar() {
     </>
   );
   return (
-    <div className="navbar bg-base-100 mx-auto container">
+    <div className="z-10   sticky top-0 glass ">
+      <div><div className=" navbar container  mx-auto">
       <div className="navbar-start">
         
         <Link href="/" className="btn btn-ghost text-xl">
@@ -56,6 +60,7 @@ export default function Navbar() {
           Free Consulting
         </a>
       </div>
+      </div></div>
     </div>
   );
 }

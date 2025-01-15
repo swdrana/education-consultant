@@ -13,9 +13,15 @@ export default function page() {
   return (
     <div>
       <section className=" ">
-        <h1 className=" text-2xl lg:text-4xl text-center mt-10 lg:mt-16 font-black">
-          About us
-        </h1>
+      <div className=" flex flex-col justify-center items-center pt-10 lg:pt-20">
+    <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-6xl ">
+       <mark className="px-2 text-white bg-primary rounded-lg">About</mark>{" "} Us
+    </h1>
+    <p className="  text-center max-w-2xl">
+      Here at Flowbite we focus on markets where technology, innovation, and
+      capital can unlock long-term value and drive economic growth.
+    </p>
+  </div>
         {/* Content Left Section  */}
         <div className="container px-5 py10 md:py-24 mx-auto flex flex-wrap">
           <div className="flex flex-wrap w-full">
