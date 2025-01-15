@@ -26,12 +26,12 @@ export default function News() {
   return (
     <div>
       <SectionTitle
-        text="Our Team"
+        text="News"
         desc="To maintain the reputation of a quality,high standard and reliable solution by establishing ourselves as one stop service Provider in the Career Industry."
       />
 
       {/* Card Section */}
-      <div className="flex  justify-around items-center gap-16 flex-wrap my-10">
+      <div className="flex  justify-around items-center gap-16 flex-wrap">
         {/* Card */}
         {
             cardInfo.map(card=>{
@@ -46,10 +46,6 @@ export default function News() {
             })
         }
       </div>
-        <div className=" flex items-center justify-center pt-20 pb-8">
-
-        <button className={`btn btn-primary`}>Join Here</button>
-        </div>
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import Forms from "@/components/pages/Forms";
 import GetTodosUI from "@/components/pages/getTodos";
+import Gallary from "@/components/pages/home/Gallary";
 import News from "@/components/pages/home/News";
 import OurServices from "@/components/pages/home/OurServices";
 import Reviews from "@/components/pages/home/Reviews";
@@ -74,6 +75,15 @@ export default function Home() {
           <OurServices />
         </div>
       </div>
+
+      {/* Gallary */}
+      <section className=" bg-base-100 ">
+        <div className="container mx-auto">
+          <Gallary />
+        </div>
+      </section>
+
+      {/* News  */}
       <div className=" bg-base-200 dark:bg-transparent">
         <div className="container mx-auto">
           <div className="flex flex-col gap-10 py-20">
@@ -81,13 +91,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="">
-        <div className="container mx-auto">
-          <div className="flex flex-col gap-10 py-20">
-            <UpcomingUniversityEvents />
-          </div>
-        </div>
-      </div>
+
+      {/* Team  */}
       <div className=" bg-base-200 dark:bg-transparent">
         <div className="container mx-auto">
           <div className="flex flex-col gap-10 py-20">
@@ -96,19 +101,29 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Reviews */}
-      <section className=" bg-base-200 bg-[url('/img/testimonial_bg.jpg')] bg-no-repeat bg-right-bottom dark:bg-transparent dark:bg-[url('/img/testimonial_bg.jpg')] ">
-        <div className="container mx-auto">
-          <Reviews />
-        </div>
-      </section>
       {/* Videos */}
       <section className=" bg-base-100 ">
         <div className="container mx-auto">
           <Videos />
         </div>
       </section>
-      <div className="min-h-screen relative bg-slate-200">
+      {/* Reviews */}
+      <section className=" bg-base-200 bg-[url('/img/testimonial_bg.jpg')] bg-no-repeat bg-right-bottom dark:bg-transparent dark:bg-[url('/img/testimonial_bg.jpg')] ">
+        <div className="container mx-auto">
+          <Reviews />
+        </div>
+      </section>
+      {/* Blog  */}
+      <div className="">
+        <div className="container mx-auto">
+          <div className="flex flex-col gap-10 py-20">
+            <UpcomingUniversityEvents />
+          </div>
+        </div>
+      </div>
+
+      {/* Todo  */}
+      {/* <div className="min-h-screen relative bg-slate-200">
         <div className="flex justify-around flex-col items-center h-1/2 ">
           <h1 className=" text-4xl font-bold mt-12 mb-12">Todos Page</h1>
           <Forms />
@@ -116,7 +131,7 @@ export default function Home() {
         <div className="flex  flex-col items-center h-1/2 ">
           <GetTodosUI />
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
