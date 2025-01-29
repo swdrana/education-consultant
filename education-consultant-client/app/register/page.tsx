@@ -32,7 +32,7 @@ export default function Register() {
     const res = await signIn("credentials", {
       email: formData.get("email") as string,
       password: formData.get("password") as string,
-      redirect: false, // Don't let next-auth handle the redirect
+      redirect: true, // Don't let next-auth handle the redirect
     });
 
     console.log('signIn response:', res); // Debugging line to check the response
@@ -40,7 +40,7 @@ export default function Register() {
     if (res?.error) {
       setError(res.error as string);
     }
-    if (res?.ok && res?.code !== null) {
+    if (res?.ok) {
       console.log('Redirecting to home'); // Debugging line to ensure this block runs
       router.push("/"); // Redirect to home after successful login
     }
