@@ -1,6 +1,9 @@
 import Link from "next/link";
-
-export default function MainFooter() {
+import {SessionProvider} from "next-auth/react"
+import { getSession } from "@/lib/getSession";
+import { doLogout } from "@/actions";
+export default async function MainFooter() {
+  const session = await getSession()
   return (
     <>
       <footer className="footer bg-base-200 text-base-content p-10">
@@ -12,17 +15,20 @@ export default function MainFooter() {
           <a className="link link-hover">Advertisement</a>
         </nav>
         <nav>
-          <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <h6 className="footer-title">Pages</h6>
+          <Link href="/about-us" className="link link-hover">About us</Link>
+          <Link href={"/contact"} className="link link-hover">Contact</Link>
+          <Link href={"/services"} className="link link-hover">Services</Link>
+          <Link href={"/apply"} className="link link-hover">Apply Now</Link>
         </nav>
         <nav>
           <h6 className="footer-title">Legal</h6>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>
+          {session?.user ? <form action={doLogout}>
+        <button className="rounded" type="submit">Log Out</button>
+    </form>: <Link href='/login'>Admin Login</Link>}
         </nav>
       </footer>
       <footer className="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">

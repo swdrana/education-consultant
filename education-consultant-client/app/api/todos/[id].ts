@@ -1,9 +1,12 @@
 // pages/api/todos/[id].ts
+import { connectToMongoDB } from "@/lib/connectDB";
 import Todo from "@/models/todoModel";
-import { connectToMongoDB } from "@/lib/db";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   const { id } = req.query;
   await connectToMongoDB();
 

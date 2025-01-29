@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import Forms from "@/components/pages/Forms";
 import GetTodosUI from "@/components/pages/getTodos";
 import Gallary from "@/components/pages/home/Gallary";
@@ -13,7 +14,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 
-export default function Home() {
+export default async function  Home() {
+  const session = await auth()
+  console.log(session)
   return (
     <>
       {/* Hero Section */}
@@ -26,6 +29,7 @@ export default function Home() {
               <br className="md:hidden lg:inline-block" />
               Your Dream
             </h1>
+            <p>Welcome {session?.user?.name}!</p>
             <p className="my-5 md:my-10 leading-relaxed  ">
               We are always availed to consult on taking your higher education
               to the next level so you can stay competitive in the global world.
