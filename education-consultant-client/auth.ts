@@ -16,8 +16,9 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
           password: {},
       },
       async authorize(credentials) {
-          if (credentials === null) return null;
-          
+        if (!credentials || !credentials.email || !credentials.password) {
+          throw new Error("Email and Password are required");
+        }
           try {
               const user = await User.findOne({ email: credentials?.email });
               // console.log(user);
