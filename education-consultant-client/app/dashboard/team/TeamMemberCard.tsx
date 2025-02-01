@@ -36,10 +36,12 @@ const TeamMemberCard: FC<TeamMemberCardProps> = ({ member, onDelete, onEdit }) =
     onEdit(member); // Pass member data to parent for editing
   };
 
+  // console.log(`/api${member.photoUrl}`)
   return (
     <div className="card shadow-lg p-4 flex items-center gap-4">
       <Image
-        src={`/api/uploads/${member.photoUrl.split("/").pop()}`}
+        // src={`/api/uploads/${member.photoUrl.split("/").pop()}`}
+        src={member.photoUrl}
         alt={member.name}
         width={200}
         height={200}

@@ -24,7 +24,7 @@ export async function addTeamMember(formData: FormData) {
     if (!photo) throw new Error("No photo provided");
 
     // ✅ Create Upload Folder inside public
-    const uploadDir = path.join(process.cwd(), "public", "uploads");
+    const uploadDir = path.join(process.cwd(), "storage", "uploads");
     await fs.promises.mkdir(uploadDir, { recursive: true });
 
     // ✅ Save File inside the public folder
@@ -35,7 +35,7 @@ export async function addTeamMember(formData: FormData) {
 
     // ✅ Save to Database
     const newMember = new TeamMember({
-      photoUrl: `/uploads/${fileName}`, // Store relative path for client-side access
+      photoUrl: `/api/uploads/${fileName}`, // Store relative path for client-side access
       name: formData.get("name"),
       position: formData.get("position"),
       description: formData.get("description"),
@@ -85,7 +85,7 @@ export async function updateTeamMember(id: string, formData: FormData) {
         }
       }
 
-      updateData.photoUrl = `/uploads/${fileName}`; 
+      updateData.photoUrl = `/api/uploads/${fileName}`; 
     }
 
     await TeamMember.findByIdAndUpdate(id, updateData);
