@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import connectDB from "@/lib/connectDB";
 import TeamMember, { ITeamMember } from "@/models/TeamMember";
 import Image from "next/image";
@@ -21,7 +22,7 @@ export default async function TeamServerSide() {
       <div className="w-full group">
         <div className="card card-side bg-base-100 shadow-xl flex flex-col md:flex-row p-2 group-hover:scale-105 transition-transform duration-300">
           <figure className="min-w-48 m-2">
-            <Image
+            <img
               className="object-cover rounded-2xl shadow-lg bg-orange-500 max-h-[350px] md:h-52 transition-transform duration-300 group-hover:scale-110"
               src={member.photoUrl}
               alt={member.name}
