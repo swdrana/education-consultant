@@ -190,7 +190,7 @@ export default function Page() {
         </button>
 
         <p className="text-right text-neutral-600 text-sm max-w-sm mt-4 dark:text-neutral-300">
-          Don't have account? <Link href="/register">Register</Link>
+          Don&lsquo;t have account? <Link href="/register">Register</Link>
         </p>
 
         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />

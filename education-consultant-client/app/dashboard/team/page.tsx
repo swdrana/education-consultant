@@ -31,8 +31,10 @@ const TeamPage = () => {
   // Edit a team member
   const handleEditMember = (member: any) => {
     setEditingMember(member); // Set the member to edit
-    document.getElementById("team_modal")?.showModal(); // Show the modal when editing
+    const modal = document.getElementById("team_modal") as HTMLDialogElement; // Cast to HTMLDialogElement
+    modal?.showModal(); // Show the modal when editing
   };
+  
 
   // Delete a team member
   const handleDeleteMember = (id: string) => {
@@ -42,7 +44,8 @@ const TeamPage = () => {
   // Reset the editing member when opening the modal for a new member
   const handleOpenAddMemberModal = () => {
     setEditingMember(null); // Clear the editing member data
-    document.getElementById("team_modal")?.showModal();
+    const modal = document.getElementById("team_modal") as HTMLDialogElement; // Cast to HTMLDialogElement
+    modal?.showModal(); // Show the modal when editing
   };
 
   return (

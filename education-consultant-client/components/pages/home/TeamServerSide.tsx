@@ -11,14 +11,14 @@ import {
 import SectionTitle from "../components/SectionTitle";
 
 export default async function TeamServerSide() {
-  connectDB();
+  await connectDB();
 
-  // Lean ডাটা কাস্টিং
-  const teamMembers: ITeamMember[] = await TeamMember.find().lean().exec();
+  // Cast the data to ITeamMember[]
+  const teamMembers: ITeamMember[] = await TeamMember.find();
 
   const TiltCard = ({ member }: { member: ITeamMember }) => {
     return (
-      <div className=" w-full group">
+      <div className="w-full group">
         <div className="card card-side bg-base-100 shadow-xl flex flex-col md:flex-row p-2 group-hover:scale-105 transition-transform duration-300">
           <figure className="min-w-48 m-2">
             <Image
@@ -91,7 +91,7 @@ export default async function TeamServerSide() {
         desc="To maintain the reputation of a quality, high standard, and reliable solution by establishing ourselves as one-stop service provider in the Career Industry."
       />
 
-      <div className=" grid grid-cols-1 md:grid-cols-2 gap-16 flex-wrap my-10 mx-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 flex-wrap my-10 mx-2">
         {teamMembers.map((member) => (
           <TiltCard key={member._id as string} member={member} />
         ))}

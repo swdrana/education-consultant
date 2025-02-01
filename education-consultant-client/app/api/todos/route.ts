@@ -1,11 +1,12 @@
-import { connectToMongoDB } from "@/lib/connectDB";
+
+import connectDB from "@/lib/connectDB";
 import Todo from "@/models/todoModel";
 import { NextResponse } from "next/server";
 
 // Handle GET requests (fetch all todos)
 export async function GET() {
   try {
-    await connectToMongoDB();
+    await connectDB();
     const todos = await Todo.find();
     return NextResponse.json(todos);
   } catch (error) {
@@ -20,7 +21,7 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const { todo, todoDeadline } = await request.json();
-    await connectToMongoDB();
+    await connectDB();
     const newTodo = new Todo({
       todo,
       todoDeadline: new Date(todoDeadline),

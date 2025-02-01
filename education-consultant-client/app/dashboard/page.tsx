@@ -4,7 +4,7 @@ import connectDB from "@/lib/connectDB";
 import ApplicationData from "@/models/ApplicationData";
 import AdminDashboard from "@/components/AdminDashboard"; // Import the Admin Dashboard component
 
-export async function AdminDashboardPage({ searchParams }: { searchParams: { page: string } }) {
+export default async function AdminDashboardPage({ searchParams }: { searchParams: { page: string } }) {
   const session = await getSession();
   const user = session?.user;
 
@@ -54,5 +54,3 @@ export async function AdminDashboardPage({ searchParams }: { searchParams: { pag
     return <div>Error fetching applications</div>;
   }
 }
-
-export default AdminDashboardPage;

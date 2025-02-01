@@ -1,6 +1,6 @@
 // pages/api/todos/[id].ts
-import { connectToMongoDB } from "@/lib/connectDB";
 import Todo from "@/models/todoModel";
+import connectDB from "@/lib/connectDB"
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -8,8 +8,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { id } = req.query;
-  await connectToMongoDB();
-
+  await connectDB();
   if (req.method === "DELETE") {
     try {
       await Todo.deleteOne({ _id: id });

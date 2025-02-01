@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FC } from "react";
 
-const DashboardLayout: FC = ({ children }: { children: React.ReactNode }) => {
+const DashboardLayout: FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div>
       <div className="flex">
@@ -29,7 +29,7 @@ const DashboardLayout: FC = ({ children }: { children: React.ReactNode }) => {
 
         {/* Main Content */}
         <div className="flex-1 p-8">{children}</div>
-      </div>{" "}
+      </div>
     </div>
   );
 };

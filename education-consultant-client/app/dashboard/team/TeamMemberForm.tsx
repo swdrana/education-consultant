@@ -53,16 +53,16 @@ const TeamMemberForm = ({ onAdd, onEdit, member }: { onAdd: (member: any) => voi
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     if (!photo && !member) {
       toast.error("Please upload a photo");
       return;
     }
-
+  
     const data = new FormData();
     Object.entries(formData).forEach(([key, value]) => data.append(key, value));
     if (photo) data.append("photo", photo);
-
+  
     try {
       if (member) {
         // Update team member if editing
@@ -75,11 +75,15 @@ const TeamMemberForm = ({ onAdd, onEdit, member }: { onAdd: (member: any) => voi
         toast.success("Team member added!");
         onAdd(newMember); // Update the UI dynamically without reload
       }
-      document.getElementById("team_modal")?.close();
+  
+      // Cast to HTMLDialogElement to use close() method
+      const modal = document.getElementById("team_modal") as HTMLDialogElement;
+      modal?.close(); // Close the modal after form submission
     } catch (error) {
       toast.error("Error submitting form.");
     }
   };
+  
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">

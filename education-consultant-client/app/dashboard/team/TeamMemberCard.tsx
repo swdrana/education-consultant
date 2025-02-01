@@ -1,6 +1,7 @@
 "use client";
 
 import { deleteTeamMember } from "@/actions/teamActions";
+import Image from "next/image";
 import { FC } from "react";
 import { toast } from "react-hot-toast";
 
@@ -37,10 +38,12 @@ const TeamMemberCard: FC<TeamMemberCardProps> = ({ member, onDelete, onEdit }) =
 
   return (
     <div className="card shadow-lg p-4 flex items-center gap-4">
-      <img
+      <Image
         src={member.photoUrl}
         alt={member.name}
-        className="w-16 h-16 rounded-full"
+        width={200}
+        height={200}
+        className="w-20 h-20 rounded-lg"
       />
       <div>
         <h3 className="text-lg font-semibold">{member.name}</h3>
