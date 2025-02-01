@@ -70,14 +70,14 @@ export async function updateTeamMember(id: string, formData: FormData) {
       const photo = formData.get("photo") as File;
       const buffer = Buffer.from(await photo.arrayBuffer());
       const fileName = `${Date.now()}-${photo.name}`;
-      const filePath = path.join(process.cwd(), "public", "uploads", fileName);
+      const filePath = path.join(process.cwd(), "storage", "uploads", fileName);
 
       await writeFile(filePath, buffer);
 
       // ✅ Delete Old Photo (Optional)
       const oldMember = await TeamMember.findById(id);
       if (oldMember?.photoUrl) {
-        const oldFilePath = path.join(process.cwd(), "public", oldMember.photoUrl);
+        const oldFilePath = path.join(process.cwd(), "storage", oldMember.photoUrl);
         try {
           await unlink(oldFilePath);
         } catch (err) {
@@ -85,7 +85,7 @@ export async function updateTeamMember(id: string, formData: FormData) {
         }
       }
 
-      updateData.photoUrl = `/uploads/${fileName}`;
+      updateData.photoUrl = `/uploads/${fileName}`; 
     }
 
     await TeamMember.findByIdAndUpdate(id, updateData);
