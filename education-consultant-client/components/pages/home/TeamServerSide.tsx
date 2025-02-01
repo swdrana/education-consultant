@@ -22,9 +22,10 @@ export default async function TeamServerSide() {
       <div className="w-full group">
         <div className="card card-side bg-base-100 shadow-xl flex flex-col md:flex-row p-2 group-hover:scale-105 transition-transform duration-300">
           <figure className="min-w-48 m-2">
-            <img
+            {/* Using Image component from next.js */}
+            <Image
               className="object-cover rounded-2xl shadow-lg bg-orange-500 max-h-[350px] md:h-52 transition-transform duration-300 group-hover:scale-110"
-              src={member.photoUrl}
+              src={`/uploads/${member.photoUrl}`}  // Assuming the photoUrl is a relative path from the public directory
               alt={member.name}
               width={100}
               height={100}
