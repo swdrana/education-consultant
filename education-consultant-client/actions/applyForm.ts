@@ -30,15 +30,15 @@ export const fff = async (formData: FormData) => {
     const transporter = nodemailer.createTransport({
       service: "gmail", // গুগল মেইল সার্ভিস
       auth: {
-        user: process.env.ADMIN_EMAIL,  // .env ফাইল থেকে ইমেইল
-        pass: process.env.ADMIN_EMAIL_PASSWORD,  // .env ফাইল থেকে অ্যাপ পাসওয়ার্ড
+        user: process.env.ADMIN_EMAIL!,  // .env ফাইল থেকে ইমেইল
+        pass: process.env.ADMIN_EMAIL_PASSWORD!,  // .env ফাইল থেকে অ্যাপ পাসওয়ার্ড
       },
     });
 
     // ইমেইল কনটেন্ট তৈরি করা
     const mailOptions = {
-      from: process.env.ADMIN_EMAIL,  // প্রেরক (Admin email)
-      to: process.env.ADMIN_EMAIL,    // রিসিভার (Admin email)
+      from: process.env.ADMIN_EMAIL!,  // প্রেরক (Admin email)
+      to: process.env.ADMIN_EMAIL!,    // রিসিভার (Admin email)
       subject: "New Application Received", // ইমেইলের সাবজেক্ট
       text: `
         A new application has been submitted:
