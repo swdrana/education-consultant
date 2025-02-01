@@ -1,10 +1,10 @@
 import MainFooter from "@/components/footer/MainFooter";
 import Navbar from "@/components/navbar/Navbar";
+import connectDB from "@/lib/connectDB";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
-import connectDB from "@/lib/connectDB";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,10 +22,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+        {/* সাইটের ক্যারেক্টার এনকোডিং: - `UTF-8` এনকোডিং ব্যবহার করা হয় যাতে সকল ভাষার (বিশেষ করে বাংলা, ইংরেজি) অক্ষর ঠিকভাবে প্রদর্শিত হয়। */}
         <meta charSet="UTF-8" />
+
+        {/*রেসপন্সিভ ডিজাইনের জন্য:
+        - `width=device-width`: ডিভাইসের প্রস্থ অনুযায়ী কন্টেন্ট ঠিক করবে।
+        - `initial-scale=1`: স্কেলের প্রাথমিক মান নির্ধারণ করে।
+        - `maximum-scale=1`: সর্বোচ্চ জুম সীমিত রাখবে।
+        - `user-scalable=no`: ব্যবহারকারীকে জুম বন্ধ করে দেয়। (যদি প্রয়োজন না থাকে, `yes` রাখা যেতে পারে।) */}
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /> */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Your site description here" />
-        <meta property="og:title" content="Stairtouch Site Title" />
+
+        {/*  সাইটের সংক্ষিপ্ত বর্ণনা:
+        - সার্চ ইঞ্জিনে এবং সোশ্যাল শেয়ারে প্রদর্শিত হবে।
+        - এটি **অত্যন্ত গুরুত্বপূর্ণ** কারণ এটি ক্লিক-থ্রু রেট বাড়াতে সাহায্য করে। */}
+        <meta
+          name="description"
+          content="Stair Touch Education Consultancy and Travels, বাংলাদেশের শীর্ষ শিক্ষা পরামর্শক প্রতিষ্ঠান, আন্তর্জাতিক শিক্ষার সুযোগের জন্য সহায়তা প্রদান করে। আমরা শিক্ষার্থীদের তাদের স্বপ্নের বিশ্ববিদ্যালয়ে ভর্তি হতে সাহায্য করি।"
+        />
+        <meta
+          property="og:title"
+          content="Stair Touch Education Consultancy and Travels"
+        />
         <meta
           property="og:description"
           content="Description for social sharing"
@@ -35,7 +53,92 @@ export default function RootLayout({
           content="https://scontent-iad3-1.xx.fbcdn.net/v/t39.30808-6/347152304_1534096320450371_7741133310102278855_n.png?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=_HmkNAJedjsQ7kNvgFInx7C&_nc_zt=23&_nc_ht=scontent-iad3-1.xx&_nc_gid=Ap9nM2-GaU85TqthQR6ugdc&oh=00_AYDs2PZ2lt7mZ1uaIv_TMIipL-icYFLFeftE1GkeNCi2TQ&oe=678BB653"
         />
         <meta property="og:url" content="https://stairtouch.com/" />
-        <title>Your Site Title</title>
+        {/* 
+        কীওয়ার্ডস:
+        - সার্চ ইঞ্জিনের জন্য প্রাসঙ্গিক টার্ম যোগ করে।
+        - আপনার প্রোডাক্ট বা সার্ভিস অনুযায়ী কাস্টমাইজ করুন।
+      */}
+        <meta
+          name="keywords"
+          content="education consultancy, study abroad, international education, higher education, student guidance, Stair Touch, Bangladesh, university admission, travel consultancy, study in Russia, study in Romania, study in China, study in UK, study in South Korea, study in Europe, Europe education opportunities"
+        />
+
+        {/* 
+        সার্চ ইঞ্জিন নির্দেশিকা:
+        - `index`: পেজটি ইনডেক্স করার অনুমতি দেয়।
+        - `follow`: এই পেজের লিঙ্ক ফলো করার অনুমতি দেয়।
+        - যদি কিছু পেজ লুকিয়ে রাখতে চান (যেমন অ্যাডমিন পেজ), সেখানে `noindex` বা `nofollow` ব্যবহার করবেন।
+      */}
+        <meta name="robots" content="index, follow" />
+
+        {/* 
+        ওপেন গ্রাফ ট্যাগস:
+        - সোশ্যাল মিডিয়া শেয়ারিংয়ের জন্য ব্যবহৃত হয়।
+        - Facebook, Twitter, LinkedIn ইত্যাদিতে পেজটি কেমন দেখাবে তা নির্ধারণ করে।
+      */}
+        <meta
+          property="og:title"
+          content="Stair Touch Education Consultancy and Travels"
+        />
+        <meta
+          property="og:description"
+          content="Stair Touch Education Consultancy and Travels helps students explore and secure international education opportunities. We provide expert guidance for university admissions and study abroad."
+        />
+        <meta
+          property="og:image"
+          content="https://stairtouch.com/path/to/image.jpg"
+        />
+        <meta property="og:url" content="https://stairtouch.com" />
+        <meta property="og:type" content="website" />
+
+        {/* 
+        টুইটার কার্ড:
+        - টুইটারে কিভাবে লিঙ্কটি শেয়ার হবে তা নির্ধারণ করে।
+      */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Stair Touch Education Consultancy and Travels"
+        />
+        <meta
+          name="twitter:description"
+          content="Stair Touch helps students explore and secure international education opportunities."
+        />
+        <meta
+          name="twitter:image"
+          content="https://stairtouch.com/path/to/image.jpg"
+        />
+
+        {/* 
+        পেজ টাইটেল:
+        - ব্রাউজারের ট্যাবে এবং সার্চ রেজাল্টে দেখায়।
+        - সার্চ র‍্যাংকিংয়ে এটি খুব গুরুত্বপূর্ণ।
+      */}
+        <title>Stair Touch Education Consultancy and Travels</title>
+
+        {/* 
+        স্ট্রাকচার্ড ডেটা (JSON-LD):
+        - সার্চ ইঞ্জিনের জন্য পেজের তথ্য কাঠামো পরিষ্কারভাবে নির্ধারণ করে।
+        - পণ্য বা সার্ভিস নিয়ে বিস্তারিত তথ্য যোগ করতে পারেন।
+      */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Stair Touch Education Consultancy and Travels",
+            description:
+              "Stair Touch helps students explore and secure international education opportunities. We provide expert guidance for university admissions and study abroad.",
+            url: "https://stairtouch.com",
+            publisher: {
+              "@type": "Organization",
+              name: "Stair Touch Education Consultancy and Travels",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://stairtouch.com/logo.jpg",
+              },
+            },
+          })}
+        </script>
       </Head>
       <body className={inter.className}>
         <Navbar />

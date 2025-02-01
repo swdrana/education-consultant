@@ -1,10 +1,10 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { register } from "@/actions/register";
 import { signIn } from "next-auth/react"; // Ensure you're importing signIn from next-auth
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { FormEvent, useRef, useState } from "react";
 
 export default function Register() {
   const [error, setError] = useState<string>();
@@ -35,13 +35,13 @@ export default function Register() {
       redirect: true, // Don't let next-auth handle the redirect
     });
 
-    console.log('signIn response:', res); // Debugging line to check the response
+    console.log("signIn response:", res); // Debugging line to check the response
 
     if (res?.error) {
       setError(res.error as string);
     }
     if (res?.ok) {
-      console.log('Redirecting to home'); // Debugging line to ensure this block runs
+      console.log("Redirecting to home"); // Debugging line to ensure this block runs
       router.push("/"); // Redirect to home after successful login
     }
   };
@@ -86,7 +86,10 @@ export default function Register() {
           Sign up
         </button>
 
-        <Link href="/login" className="text-sm text-[#888] transition duration-150 ease hover:text-black">
+        <Link
+          href="/login"
+          className="text-sm text-[#888] transition duration-150 ease hover:text-black"
+        >
           Already have an account?
         </Link>
       </form>

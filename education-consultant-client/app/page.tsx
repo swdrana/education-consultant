@@ -1,6 +1,3 @@
-import { auth } from "@/auth";
-import Forms from "@/components/pages/Forms";
-import GetTodosUI from "@/components/pages/getTodos";
 import Gallary from "@/components/pages/home/Gallary";
 import News from "@/components/pages/home/News";
 import OurServices from "@/components/pages/home/OurServices";
@@ -10,13 +7,15 @@ import Team from "@/components/pages/home/Team";
 import UniversitySlide from "@/components/pages/home/UniversitySlide";
 import UpcomingUniversityEvents from "@/components/pages/home/UpcomingUniversityEvents";
 import Videos from "@/components/pages/home/Videos";
+import { auth } from "@/auth";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
+import TeamServerSide from "@/components/pages/home/TeamServerSide";
 
-export default async function  Home() {
-  const session = await auth()
-  console.log(session)
+export default async function Home() {
+  const session = await auth();
+  console.log(session);
   return (
     <>
       {/* Hero Section */}
@@ -100,7 +99,7 @@ export default async function  Home() {
       <div className=" bg-base-200 dark:bg-transparent">
         <div className="container mx-auto">
           <div className="flex flex-col gap-10 py-20">
-            <Team />
+            <TeamServerSide />
           </div>
         </div>
       </div>

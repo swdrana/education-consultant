@@ -1,6 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-interface ITeamMember extends Document {
+export interface ITeamMember extends Document {
   photoUrl: string;
   name: string;
   position: string;
