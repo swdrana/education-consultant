@@ -8,7 +8,8 @@ const nextConfig = {
       "www.mobvista.com",
       "scontent-mrs2-2.xx.fbcdn.net",
       "plus.unsplash.com",
-      "http://localhost:3000"
+      "http://localhost:3000",
+      "https://eduor.vercel.app"
     ],
   }, 
   experimental: {

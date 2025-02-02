@@ -59,7 +59,7 @@ export default function UpcomingUniversityEvents() {
                 </p>
 
                 <div className=" flex items-center justify-between">
-                  <button className={`btn btn-sm btn-primary`}>Learn More</button>
+                  <Link href='/apply' className={`btn btn-sm btn-primary`}>Book Now</Link>
                   <p className=" text-sm">{card.time}</p>
                 </div>
               </div>

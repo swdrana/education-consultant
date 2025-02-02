@@ -21,6 +21,11 @@ const DashboardLayout: FC<{ children: React.ReactNode }> = ({ children }) => {
                     Team Members
                   </Link>
                 </li>
+                <li className="mb-4">
+                  <Link href="/dashboard/blogs" className="text-white">
+                    Blogs
+                  </Link>
+                </li>
                 {/* Add more sections here */}
               </ul>
             </nav>

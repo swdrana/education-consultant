@@ -15,10 +15,12 @@ import TeamServerSide from "@/components/pages/home/TeamServerSide";
 import Services from "./services/page";
 import Features from "./services/Features";
 import SectionTitle from "@/components/pages/components/SectionTitle";
+import { getBlogs } from "@/actions/blog";
 
 export default async function Home() {
   const session = await auth();
-  console.log(session);
+  
+  const blogs= await getBlogs();
   return (
     <>
       {/* Hero Section */}
@@ -99,7 +101,7 @@ export default async function Home() {
       <div className=" bg-base-200 dark:bg-transparent">
         <div className="container mx-auto">
           <div className="flex flex-col gap-10 py-20">
-            <News />
+            <News blogs={blogs} />
           </div>
         </div>
       </div>
@@ -129,7 +131,7 @@ export default async function Home() {
       <div className="">
         <div className="container mx-auto">
           <div className="flex flex-col gap-10 py-20">
-            <UpcomingUniversityEvents />
+            <UpcomingUniversityEvents blogs={blogs} />
           </div>
         </div>
       </div>
