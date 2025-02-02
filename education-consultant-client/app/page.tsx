@@ -12,6 +12,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 import TeamServerSide from "@/components/pages/home/TeamServerSide";
+import Services from "./services/page";
+import Features from "./services/Features";
+import SectionTitle from "@/components/pages/components/SectionTitle";
 
 export default async function Home() {
   const session = await auth();
@@ -75,7 +78,13 @@ export default async function Home() {
       <UniversitySlide />
       <div className="container mx-auto">
         <div className="flex flex-col gap-10 my-10 md:my-16">
-          <OurServices />
+          <SectionTitle
+                  text="Our Services"
+                  desc="Executive Trade International is an University Application Centre, guiding Bangladeshi students to Australian, British, Canadian and Irish universities!"
+                />
+          {/* <OurServices /> */}
+          {/* <Services/> */}
+          <Features/>
         </div>
       </div>
 
