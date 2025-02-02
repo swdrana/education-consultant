@@ -41,9 +41,9 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   ],
   callbacks: {
     async signIn({ user, account, profile }) {
-      console.log('signIn Callback user: ', user); 
-      console.log('signIn Callback account: ', account); 
-      console.log('signIn Callback profile: ', profile); 
+      // console.log('signIn Callback user: ', user); 
+      // console.log('signIn Callback account: ', account); 
+      // console.log('signIn Callback profile: ', profile); 
       await connectDB();
       const existingUser = await User.findOne({ email: user.email });
       if (!existingUser) {
@@ -62,8 +62,8 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       return true;
     },
     async jwt({ token, user }) {
-      console.log('JWT Callback token: ', token); 
-      console.log('JWT Callback user: ', user); 
+      // console.log('JWT Callback token: ', token); 
+      // console.log('JWT Callback user: ', user); 
       if (user) {
         const dbUser = await User.findOne({ email: user.email });
         token.role = dbUser?.role || "user";
@@ -71,8 +71,8 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       return token;
     },
     async session({ session, token }) {
-      console.log('session Callback session: ', session); 
-      console.log('session Callback token: ', token); 
+      // console.log('session Callback session: ', session); 
+      // console.log('session Callback token: ', token); 
       if (token) {
         session.user = {
           ...session.user,
