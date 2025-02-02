@@ -131,7 +131,7 @@ export default async function Home() {
       <div className="">
         <div className="container mx-auto">
           <div className="flex flex-col gap-10 py-20">
-            <UpcomingUniversityEvents blogs={blogs} />
+            <UpcomingUniversityEvents/>
           </div>
         </div>
       </div>
