@@ -61,7 +61,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
     async jwt({ token, user }) {
       if (user) {
         const dbUser = await User.findOne({ email: user.email });
-        token.userRole = dbUser?.role || "user";
+        token.role = dbUser?.role || "user";
       }
       return token;
     },
@@ -70,7 +70,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
       if (token) {
         session.user = {
           ...session.user,
-          role: token.userRole,
+          role: token.role,
         };
       }
       return session;
