@@ -14,7 +14,7 @@ export async function middleware(req: NextRequest) {
   }
 
   // User is authenticated and trying to access login page
-  if (token && pathname === "/login" || pathname === "/register") {
+  if ((token && pathname === "/login") || (token && pathname === "/register")) {
     return NextResponse.redirect(new URL("/", req.url));
   }
 
