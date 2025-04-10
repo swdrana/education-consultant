@@ -45,6 +45,9 @@ export default async function RootLayout({
   const session = await auth();
   return (
     <html lang="en">
+      <head>
+        <meta name="facebook-domain-verification" content="dla1xx60hoty9t5hkwhk8wrrynkdzr" />
+      </head>
       <body className={inter.className}>
         <SessionProvider session={session}>
           <Navbar />
