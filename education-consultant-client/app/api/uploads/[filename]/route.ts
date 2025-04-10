@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import path from "path";
 import fs from "fs";
 
-export async function GET(req: Request, { params }: { params: { filename: string } }) {
-  const filePath = path.join(process.cwd(), "storage/uploads", params.filename);
+export async function GET(req: Request, { params }: { params: any }) {
+  const filePath = path.join(process.cwd(), "storage/uploads", params?.filename);
 
   if (!fs.existsSync(filePath)) {
     return NextResponse.json({ error: "File not found" }, { status: 404 });

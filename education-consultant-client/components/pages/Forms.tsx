@@ -10,7 +10,7 @@ export default function Forms() {
   return (
     <form
       ref={ref}
-      action={async (FormData) => {
+      action={async (FormData ) => {
         ref.current?.reset();
         await createTodos(FormData);
       }}

@@ -4,9 +4,9 @@ import Navbar from "@/components/navbar/Navbar";
 import connectDB from "@/lib/connectDB";
 import type { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Stair Touch",
   description:
@@ -48,7 +48,8 @@ export default async function RootLayout({
       <head>
         <meta name="facebook-domain-verification" content="dla1xx60hoty9t5hkwhk8wrrynkdzr" />
       </head>
-      <body className={inter.className}>
+      <body style={{ fontFamily: "Inter, sans-serif" }}> 
+      {/* className={inter.className}  */}
         <SessionProvider session={session}>
           <Navbar />
           {children}

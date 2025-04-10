@@ -30,7 +30,7 @@ export default async function GetTodos() {
                 <h3>{todo.todo as string}</h3>
                 <p>{deadLineToDate(todo.todoDeadline)}</p>
               </div>
-              <form action={deleteTodo}>
+              <form action={deleteTodo as unknown as (formData: FormData) => void}>
                 <input
                   hidden
                   type="text"

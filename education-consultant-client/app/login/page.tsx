@@ -63,7 +63,7 @@ export default function Login() {
         </Link>
       </form>
 
-      <form action={doSocialLogin}>
+      <form action={doSocialLogin  as unknown as (formData: FormData) => void}>
         <button
           className=" btn btn-outline  p-1 rounded-md m-1 text-lg flex items-center gap-3 px-3 mt-6"
           type="submit"

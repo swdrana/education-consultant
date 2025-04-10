@@ -5,6 +5,9 @@ import connectDB from "@/lib/connectDB"; // ✅ Ensure correct path
 import User from "@/models/User";
 import bcrypt from "bcryptjs";
 
+// 👉 auth.ts এর একেবারে উপরে এটা যোগ করো:
+export const runtime = "nodejs";
+
 export const { auth, handlers, signIn, signOut } = NextAuth({
   providers: [
     GoogleProvider({

@@ -28,7 +28,7 @@ export default function Page() {
         <div className="flex flex-col lg:flex-row items-center">
           <div className="w-full">
             <div className="card bg-base-100 w-full shadow-2xl">
-              <form action={fff} className="card-body">
+              <form action={fff  as unknown as (formData: FormData) => void} className="card-body">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                   <div className="form-control">
                     <label className="label">

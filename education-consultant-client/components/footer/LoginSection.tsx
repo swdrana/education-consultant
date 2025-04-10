@@ -19,7 +19,7 @@ export default function LoginSection() {
           <Link href={"/dashboard"} className="link link-hover">
             Dashboard
           </Link>
-          <form action={doLogout}>
+          <form action={doLogout  as unknown as (formData: FormData) => void}>
             <button className="rounded" type="submit">
               Log Out
             </button>

@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
       backgroundImage: {
         "bg-oval": "url('/img/bg-oval.svg')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
